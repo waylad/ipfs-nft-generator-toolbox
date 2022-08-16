@@ -1,0 +1,5 @@
+test:
+  image: node:12
+  script:
+    - yarn install --production
+    - yarn test

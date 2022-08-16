@@ -2,7 +2,7 @@
 
 # What is IPFS NFT Generator Toolbox ?
 
-IPFS NFT Generator Toolbox is meant to be used for the generation and minting of large collections (e.g. 10,000) of unique NFTs.
+IPFS NFT Generator is a toolbox for the generation and minting of large collections (e.g. 10,000) of unique NFTs.
 Input SVG layers of your NFTs and the generator will combine them automatically into unique merged SVG images with metadata and upload them to IPFS.
 Then use the provided smart contract minter to create the NFTs on any EVM compatible blockchain.
 

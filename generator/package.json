@@ -1,0 +1,16 @@
+{
+  "name": "ship-enerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ipfs-http-client": "56.0.3"
+  }
+}

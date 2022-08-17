@@ -10,49 +10,44 @@ error MinterError();
 contract Minter is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
-    mapping(uint256 => string) public _tokenToShipCode;
     mapping(address => mapping(uint256 => uint256)) public _ownedTokens;
 
-    constructor(string memory tokenName, string memory symbol) ERC721(tokenName, symbol) {
-    }
+    constructor(string memory tokenName, string memory symbol)
+        ERC721(tokenName, symbol)
+    {}
 
-    function mintShip() public returns (uint256) {
+    function mint(address owner, string memory metadataURI) public returns (uint256) {
         _tokenIds.increment();
         uint256 tokenId = _tokenIds.current();
 
-        _safeMint(msg.sender, tokenId);
+        _safeMint(owner, tokenId);
 
-        _tokenToShipCode[tokenId] = "0000"; // Basic ship
+        _addTokenToOwnerEnumeration(owner, tokenId);
 
-        _addTokenToOwnerEnumeration(msg.sender, tokenId);
-
-        //string(bytes.concat(bytes(a), " ", bytes(b)))
-        string memory metadataURI = string(
-            abi.encodePacked("https://kardiachain.waralpha.io/assets/ships/", "0000", ".json")
-        );
         _setTokenURI(tokenId, metadataURI);
 
         return tokenId;
     }
 
-    function upgradeShip(uint256 tokenId, string memory shipCode) public {
-        _tokenToShipCode[tokenId] = shipCode;
-
-        string memory metadataURI = string(
-            abi.encodePacked("https://kardiachain.waralpha.io/assets/ships/", shipCode, ".json")
-        );
-
+    function upgrade(uint256 tokenId, string memory metadataURI) public {
         _setTokenURI(tokenId, metadataURI);
     }
 
-    function _addTokenToOwnerEnumeration(address owner, uint256 tokenId) private {
+    function _addTokenToOwnerEnumeration(address owner, uint256 tokenId)
+        private
+    {
         uint256 length = balanceOf(owner);
         _ownedTokens[owner][length] = tokenId;
     }
 
-    function tokenOfOwnerByIndex(uint256 index) public view virtual returns (uint256) {
+    function tokenOfOwnerByIndex(address owner, uint256 index)
+        public
+        view
+        virtual
+        returns (uint256)
+    {
         //require(index < balanceOf(owner), "ERC721Enumerable: owner index out of bounds");
-        return _ownedTokens[msg.sender][index];
+        return _ownedTokens[owner][index];
     }
 
     function throwError() external pure {

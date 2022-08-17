@@ -35,13 +35,24 @@ yarn start
 
 You will see each combination being generated and uploaded to IPFS :
 ```
-Ship 3000 uploaded to ipfs://QmTA9YxDVAu6mL7YKMMvp1RFZPdPcm2QkQH7qY9Yif4vLn
-Ship 2100 uploaded to ipfs://Qmdfvsvbga64a4jsYEp8cmUVd7wjX9RKGCnUkzGrPdJ23j
-Ship 3200 uploaded to ipfs://QmRJV15EV7x4bocTmC3zcMeqmr5UEuEhqUPuymSWibEdCf
-Ship 0200 uploaded to ipfs://QmWSARtMtktrC8TH2A2m8u6RERk1FXtXyWnrwGwUH9yae1
-Ship 3100 uploaded to ipfs://QmVDQARVgXJ7XFjyVeM2x6PQXo7x3G7bkqkWAFPu5cVTQU
-Ship 0300 uploaded to ipfs://QmUDobEALHd8jZzPQ2is9xW6K5SmbZAJKWZkTUcKuGbpUY
-Ship 1200 uploaded to ipfs://QmZ1mdinVCQhz8a8Sg3E25bVfwFpf7y9T9Hjx4jshaViVG
+Image 0002 : Generating image file
+Image 0002 : Uploading image to IPFS
+Image 0002 : Uploaded to ipfs://QmadNJttyfvN8gxv8a95xWhUFsuW8AgJ3H7GcZ4M2pwiUL
+Image 0002 : Generating metadata json file
+Image 0002 : Writing metadata json and image file in /out
+Image 0002 : DONE ---------------------------
+Image 0003 : Generating image file
+Image 0003 : Uploading image to IPFS
+Image 0003 : Uploaded to ipfs://QmTA9YxDVAu6mL7YKMMvp1RFZPdPcm2QkQH7qY9Yif4vLn
+Image 0003 : Generating metadata json file
+Image 0003 : Writing metadata json and image file in /out
+Image 0003 : DONE ---------------------------
+Image 0010 : Generating image file
+Image 0010 : Uploading image to IPFS
+Image 0010 : Uploaded to ipfs://QmTHTd6Cxmp7DuBCvbefN7m36pu7Ttos4KbzUcGvfQX52V
+Image 0010 : Generating metadata json file
+Image 0010 : Writing metadata json and image file in /out
+Image 0010 : DONE ---------------------------
 ...
 ```
 

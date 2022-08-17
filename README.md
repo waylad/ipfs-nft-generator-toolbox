@@ -14,6 +14,8 @@ The repository is made of 2 folders:
 
 ## Step 1: Generate the images and metadata and upload them to IPFS
 
+Go to the `generator` folder. 
+
 You will need an IPFS API key with Infura to proceed. Go to https://infura.io/product/ipfs and register an account.
 Then rename `.env.example` as `.env` and enter your Infura IPFS credentials:
 
@@ -48,17 +50,23 @@ Check out the generated `out` folder to see all the genrated images and metadata
 
 ## Mint the NFTs
 
-Compile the smart contract
+1- Go to the `contracts` folder. 
+
+2- Run `yarn install`
+
+3- Install and Run [Ganache](https://trufflesuite.com/ganache/)
+
+4- Compile the smart contract
 ```
 npx truffle compile
 ```
 
-Deploy the Minter contract
+5- Deploy the Minter contract
 ```
 npx truffle migrate --network testnet --reset
 ```
 
-Modify `scripts/mint.js` with an IPFS link generated previouly to mint that NFT then run the truffle script:
+6- Modify `scripts/mint.js` with an IPFS link generated previouly to mint that NFT then run the truffle script:
 ```
 npx truffle exec scripts/mint.js --network testnet
 ```

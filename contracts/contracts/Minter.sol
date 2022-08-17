@@ -5,9 +5,9 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-error SpaceshipsError();
+error MinterError();
 
-contract Spaceships is ERC721URIStorage {
+contract Minter is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
     mapping(uint256 => string) public _tokenToShipCode;
@@ -56,6 +56,6 @@ contract Spaceships is ERC721URIStorage {
     }
 
     function throwError() external pure {
-        revert SpaceshipsError();
+        revert MinterError();
     }
 }
